@@ -1,0 +1,6 @@
+# Not an installable package: run entry points from the repository root as modules
+# (python -m cutrain.training.train_long_grpo ...). This file only configures pytest.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

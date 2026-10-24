@@ -1,0 +1,10 @@
+# template for to_ollama.py (it rewrites FROM to the fresh GGUF and runs `ollama create`)
+FROM ./out/nemotron-nano-4b-orpo/nemotron-3-nano-cu-q8_0.gguf
+# same built-in chat renderer + tool/thinking parser as ollama's nemotron-3-nano
+RENDERER nemotron-3-nano
+PARSER nemotron-3-nano
+# NVIDIA's tool-calling settings; 16k = harness prompt_budget_tokens (only 4 attention layers, KV is cheap)
+PARAMETER temperature 0.6
+PARAMETER top_p 0.95
+PARAMETER num_ctx 16384
+LICENSE """Licensed by NVIDIA Corporation under the NVIDIA Open Model License"""

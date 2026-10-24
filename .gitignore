@@ -1,0 +1,36 @@
+# Virtual environments
+.venv*/
+
+# Datasets (inputs and generated) -- not published
+data/
+
+# Training runs, logs, checkpoints, adapters, evidence
+out/
+wandb/
+
+# Raw private transcripts / local opencode database
+test_calude/
+
+# Third-party checkout (clone it separately)
+llama.cpp/
+
+# Python / tooling caches
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Secrets and local config
+.env
+.env.*
+*.key
+*.pem
+.claude/
+
+# Model weights and archives
+*.gguf
+*.safetensors
+*.bin
+*.pt
+*.tar.gz
+*.bak

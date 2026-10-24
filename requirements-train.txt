@@ -1,0 +1,12 @@
+# ORPO training deps; install torch matching your CUDA first
+torch>=2.6
+transformers>=5.0      # native nemotron_h (no trust_remote_code)
+trl>=1.0               # ORPO lives in trl.experimental.orpo
+peft>=0.17
+bitsandbytes>=0.46.1
+datasets>=3.0
+accelerate>=1.2
+pyyaml                 # prepare_data.py reuses the harness tool registry
+kernels>=0.16,<0.17    # prebuilt mamba-ssm kernels (transformers use_kernels); pin per transformers' error msg
+einops                 # needed by the mamba-ssm hub kernel
+openai                 # gen_rejected.py negatives; train_grpo_gan.py with a server critic
